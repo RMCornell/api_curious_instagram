@@ -1,0 +1,10 @@
+<h1>Welcome to DarkChamber!</h2>
+
+<p>
+<% if current_user %>
+  <h2><%= current_user.nickname %>
+  <%= link_to "Logout", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Login with Instagram", login_instagram_path %>
+<% end %>
+</p>
