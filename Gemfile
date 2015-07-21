@@ -20,6 +20,9 @@ gem 'omniauth-instagram'
 # Adding Figaro Gem
 gem 'figaro'
 
+# Adding Instagram Gem
+gem 'instagram'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -48,5 +51,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Adding Jasmine for Testing
+  gem 'jasmine'
 end
 
