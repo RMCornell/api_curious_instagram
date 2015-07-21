@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       redirect_to root_path
+      byebug
     else
       redirect_to root_path
     end

@@ -2,7 +2,8 @@
 
 <p>
 <% if current_user %>
-  <h2><%= current_user.nickname %>
+  <h2><%= current_user.nickname %></br>
+<%= image_tag current_user.image %>
   <%= link_to "Logout", logout_path, method: :delete %>
 <% else %>
   <%= link_to "Login with Instagram", login_instagram_path %>
