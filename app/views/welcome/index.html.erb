@@ -1,11 +1,17 @@
-<h1>Welcome to DarkChamber!</h2>
+<div class="top-bg"></div>
+<h1>Welcome to DarkChamber!</h1>
 
 <p>
 <% if current_user %>
-  <h2><%= current_user.nickname %></br>
+  <h2><%= link_to current_user.nickname, user_path(current_user) %></h2></br>
 <%= image_tag current_user.image %>
   <%= link_to "Logout", logout_path, method: :delete %>
+    <% current_user.feed.each do |feed_item| %>
+        <%= feed_item.user.full_name  %>
+        <%= image_tag feed_item.images.standard_resolution.url %>
+    <% end %>
 <% else %>
   <%= link_to "Login with Instagram", login_instagram_path %>
 <% end %>
 </p>
+
