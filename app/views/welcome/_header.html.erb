@@ -3,7 +3,7 @@
   <p><%= link_to current_user.nickname, user_path(current_user) %></p>
   <%= link_to "Logout", logout_path, method: :delete %><br>
   <br>
-  <p>Posts by User:<%= current_user.recent.count %></p>
-  <p>Followers: <%= current_user.followers.followed_by %></p>
-  <p>Following: <%= current_user.followers.follows %></p>
+  <p>Posts by User:<%= current_user.counts.media %></p>
+  <p>Followers: <%= current_user.counts.followed_by %></p>
+  <p>Following: <%= current_user.counts.follows %></p>
 </div>

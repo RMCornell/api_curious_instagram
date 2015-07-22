@@ -9,7 +9,4 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   delete '/logout', to: 'sessions#destroy'
-
-  #Content Routes
-  get 'https://api.instagram.com/v1/users/current_user.id/followed-by?access_token=current_user.token', as: '/followed_by', to: 'welcome#followed_by'
 end
