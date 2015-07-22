@@ -13,14 +13,22 @@
                 <div class="image">
                   <%= image_tag feed_item.images.standard_resolution.url %>
                 </div>
-                <div>
+                <div class="comment">
+                  <% feed_item.comments.data.each do |comment| %>
+                    <%= comment.from.username %>
+                    <%= comment.text %>
+                  <% end %>
                 </div>
             <% end %>
             <br>
+          <div>
+          </div>
         </div>
     <% else %>
         <%= link_to "Login with Instagram", login_instagram_path %>
     <% end %>
 </div>
+
+
 
 

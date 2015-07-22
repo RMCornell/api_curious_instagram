@@ -23,9 +23,7 @@ class User < ActiveRecord::Base
     instagram_client.user_recent_media
   end
 
-  def followers
+  def counts
     instagram_client.user.counts
   end
-
-
 end
