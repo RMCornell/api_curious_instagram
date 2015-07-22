@@ -1,34 +1,43 @@
-<div class="top-bg"></div>
-<h1>Welcome to DarkChamber!</h1>
-
-
-<div>
-    <% if current_user %>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="foundation.css">
+  <link rel="stylesheet" type="text/css" href="application.css">
+</head>
+<body>
+    <div>
+        <% if current_user %>
         <%= render "header" %>
+    </div>
         <div class="post">
             <% current_user.feed.each do |feed_item| %>
-                <div class="header">
-                  <%= feed_item.user.full_name %>
-                </div>
-                <div class="image">
-                  <%= image_tag feed_item.images.standard_resolution.url %>
-                </div>
-                <div class="comment">
-                  <% feed_item.comments.data.each do |comment| %>
-                    <%= comment.from.username %>
-                    <%= comment.text %>
-                  <% end %>
-                </div>
+        <div class="image_sizing panel callout">
+          <h7>post from</h7>
+          <h2><%= feed_item.user.full_name %></h2>
+          <em><%= distance_of_time_in_words_to_now(Time.at(feed_item.created_time.to_i)) + " ago" %></em>
+        </div>
+        <div class="image_sizing">
+            <%= image_tag feed_item.images.standard_resolution.url %>
+        </div>
+        <div class="image_sizing panel callout">
+            <% feed_item.comments.data.each do |comment| %>
+                <li>
+                <strong><%= comment.from.username %></strong>
+                <em><%= comment.text %></em>
+                </li>
             <% end %>
+        </div>
+        <% end %>
             <br>
-          <div>
-          </div>
         </div>
     <% else %>
+      <div class="login">
         <%= link_to "Login with Instagram", login_instagram_path %>
+      </div>
     <% end %>
-</div>
-
+</body>
+</html>
 
 
 

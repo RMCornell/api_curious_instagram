@@ -1,9 +1,32 @@
-<div class="header">
-  <%= image_tag current_user.image %><br>
-  <p><%= link_to current_user.nickname, user_path(current_user) %></p>
-  <%= link_to "Logout", logout_path, method: :delete %><br>
-  <br>
-  <p>Posts by User:<%= current_user.counts.media %></p>
-  <p>Followers: <%= current_user.counts.followed_by %></p>
-  <p>Following: <%= current_user.counts.follows %></p>
-</div>
+<%= image_tag current_user.image %>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1>Welcome to DarkChamber</h1>
+    </li>
+
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Something</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
+      <li class="has-dropdown">
+        <a href="#">User Details</a>
+        <ul class="dropdown">
+          <li>Posts by User:<%= current_user.counts.media %></li>
+          <li>Followers:<%= current_user.counts.followed_by %></li>
+          <li>Following: <%= current_user.counts.follows %></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="left">
+      <li><%= link_to current_user.nickname, user_path(current_user) %></li>
+    </ul>
+  </section>
+</nav>
+
+
+
+
+

@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+.image_sizing {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.body-image {
+    background-image: url("image040.jpg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: auto;
+    opacity: 0.2;
+}
+
+.post {
+    width: 60%;
+    margin: auto;
+}
+
+.login {
+    background-image: url("image040.jpg");
+    background-repeat: repeat-y;
+    width: 60%;
+    height: auto;
+    }
+
+
