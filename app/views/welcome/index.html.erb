@@ -1,17 +1,29 @@
 <div class="top-bg"></div>
 <h1>Welcome to DarkChamber!</h1>
 
-<p>
-<% if current_user %>
-  <h2><%= link_to current_user.nickname, user_path(current_user) %></h2></br>
-<%= image_tag current_user.image %>
-  <%= link_to "Logout", logout_path, method: :delete %>
-    <% current_user.feed.each do |feed_item| %>
-        <%= feed_item.user.full_name  %>
-        <%= image_tag feed_item.images.standard_resolution.url %>
+
+<div>
+    <% if current_user %>
+        <%= image_tag current_user.image %><br>
+        <p><%= link_to current_user.nickname, user_path(current_user) %></p>
+        <%= link_to "Logout", logout_path, method: :delete %><br>
+        <br>
+        <p>Posts by User <%= current_user.nickname %><br><%= current_user.recent.count %></p>
+        <div class="post">
+            <% current_user.feed.each do |feed_item| %>
+                <div class="header">
+                  <%= feed_item.user.full_name %>
+                </div>
+                <div class="image">
+                    <%= image_tag feed_item.images.standard_resolution.url %>
+                </div>
+            <% end %>
+            <br>
+
+        </div>
+    <% else %>
+        <%= link_to "Login with Instagram", login_instagram_path %>
     <% end %>
-<% else %>
-  <%= link_to "Login with Instagram", login_instagram_path %>
-<% end %>
-</p>
+</div>
+
 
