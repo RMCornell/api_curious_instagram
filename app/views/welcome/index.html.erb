@@ -4,22 +4,19 @@
 
 <div>
     <% if current_user %>
-        <%= image_tag current_user.image %><br>
-        <p><%= link_to current_user.nickname, user_path(current_user) %></p>
-        <%= link_to "Logout", logout_path, method: :delete %><br>
-        <br>
-        <p>Posts by User <%= current_user.nickname %><br><%= current_user.recent.count %></p>
+        <%= render "header" %>
         <div class="post">
             <% current_user.feed.each do |feed_item| %>
                 <div class="header">
                   <%= feed_item.user.full_name %>
                 </div>
                 <div class="image">
-                    <%= image_tag feed_item.images.standard_resolution.url %>
+                  <%= image_tag feed_item.images.standard_resolution.url %>
+                </div>
+                <div>
                 </div>
             <% end %>
             <br>
-
         </div>
     <% else %>
         <%= link_to "Login with Instagram", login_instagram_path %>
