@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
   def feed
     instagram_client.user_media_feed
   end
+
+  def recent
+    instagram_client.user_recent_media
+  end
+
+
 end
