@@ -1,32 +1,22 @@
-<%= image_tag current_user.image %>
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1>Welcome to DarkChamber</h1>
-    </li>
+<section class="header">
+<div class="user_image"><%= image_tag current_user.image %></div>
 
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Something</span></a></li>
+<nav class="top-bar">
+<section class="top-bar-section">
+  <ul class="title-area">
+    <li class="name has-dropdown">
+      <a href="#"><%= current_user.nickname %>'s DarkChamber</a>
+      <ul class="dropdown">
+        <li>Posts by User: <%= current_user.counts.media %></li>
+        <li>Followers: <%= current_user.counts.followed_by %></li>
+        <li>Following: <%= current_user.counts.follows %></li>
+      </ul>
+    </li>
   </ul>
 
-  <section class="top-bar-section">
-    <ul class="right">
-      <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
-      <li class="has-dropdown">
-        <a href="#">User Details</a>
-        <ul class="dropdown">
-          <li>Posts by User:<%= current_user.counts.media %></li>
-          <li>Followers:<%= current_user.counts.followed_by %></li>
-          <li>Following: <%= current_user.counts.follows %></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="left">
-      <li><%= link_to current_user.nickname, user_path(current_user) %></li>
-    </ul>
-  </section>
+  <ul class="right">
+    <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
+  </ul>
+</section>
 </nav>
-
-
-
-
-
+</section>

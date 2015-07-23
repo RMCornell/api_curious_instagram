@@ -13,6 +13,22 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background-color: #242424;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: #242424;
+
+}
+
+.top-bar .name h1 {
+    font-family: 'Roboto Slab', serif;
+    padding-left: 15px;
+}
 
 .image_sizing {
     width: 50%;
@@ -32,15 +48,62 @@
 
 .post {
     width: 60%;
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post a {
+    font-family: 'Roboto Slab', serif;
+}
+
+.post .img {
+    width: 75%;
     margin: auto;
 }
 
 .login {
+
+    width: 500px;
+    height: 350px;
     background-image: url("image040.jpg");
-    background-repeat: repeat-y;
-    width: 60%;
-    height: auto;
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
 }
+
+.login .login_link {
+    padding: 10px;
+    border: 2px, solid, black;
+    background-color: #2E2F30;
+    opacity: 0.8;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+.login .login_link h3 {
+    color: #007ba4;
+    font-family: 'Roboto Slab', serif;
+}
+
+.user_image {
+    width: 10em;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-bar .title-area .name a {
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+
+.dropdown {
+    color: white;
+}
+
+
 
 
 

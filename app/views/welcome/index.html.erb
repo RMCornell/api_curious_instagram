@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="normalize.css">
   <link rel="stylesheet" type="text/css" href="foundation.css">
   <link rel="stylesheet" type="text/css" href="application.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div>
@@ -15,25 +16,30 @@
         <div class="image_sizing panel callout">
           <h7>post from</h7>
           <h2><%= link_to feed_item.user.full_name, "https://www.instagram.com/" + feed_item.user.username %></h2>
-          <em><%= distance_of_time_in_words_to_now(Time.at(feed_item.created_time.to_i)) + " ago" %></em>
+          <em><%= distance_of_time_in_words_to_now(Time.at(feed_item.created_time.to_i)) + " ago" %></em><br>
         </div>
-        <div class="image_sizing">
+              <div class="image_sizing">
             <%= image_tag feed_item.images.standard_resolution.url %>
         </div>
-        <div class="image_sizing panel callout">
-            <% feed_item.comments.data.each do |comment| %>
+
+              <div class="image_sizing panel callout">
+                <h7><%= feed_item.likes.values.first  %> likes</h7>
+                <% feed_item.comments.data.each do |comment| %>
                 <li>
-                <strong><%= link_to comment.from.username, "https://www.instagram.com/" + comment.from.username %></strong>
-                <em><%= comment.text %></em>
+                    <strong><%= link_to comment.from.username, "https://www.instagram.com/" + comment.from.username %></strong>
+                    <em><%= comment.text %></em>
                 </li>
             <% end %>
         </div>
         <% end %>
-            <br>
+          <br>
         </div>
     <% else %>
       <div class="login">
-        <%= link_to "Login with Instagram", login_instagram_path %>
+        <div class="login_link">
+            <h3>DarkChamber</h3>
+            <%= link_to "Login with Instagram", login_instagram_path %>
+        </div>
       </div>
     <% end %>
 </body>
