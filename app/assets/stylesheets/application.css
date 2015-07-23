@@ -31,14 +31,14 @@ body {
 }
 
 .image_sizing {
-    width: 50em;
+    width: 40em;
     height: auto;
     align-content: center;
     margin: auto;
 }
 
 img {
-    width: 50em;
+    width: 40em;
     height: auto;
 
 }
@@ -48,13 +48,13 @@ img {
     position: absolute;
     left: 0;
     top: 0;
-    width: 50em;
+    width: 40em;
     height: auto;
     opacity: 0.2;
 }
 
 .post {
-    width: 100em;
+    width: 640px;
     position: static;
     margin-left: auto;
     margin-right: auto;
@@ -65,7 +65,7 @@ img {
 }
 
 .post .img {
-    width: 75%;
+    width: 60%;
     margin: auto;
 }
 
@@ -95,7 +95,7 @@ img {
 }
 
 .user_image {
-    width: 10em;
+    width: 5em;
     height: auto;
     margin-left: auto;
     margin-right: auto;
