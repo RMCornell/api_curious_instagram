@@ -14,7 +14,7 @@
             <% current_user.feed.each do |feed_item| %>
         <div class="image_sizing panel callout">
           <h7>post from</h7>
-          <h2><%= feed_item.user.full_name %></h2>
+          <h2><%= link_to feed_item.user.full_name, "https://www.instagram.com/" + feed_item.user.username %></h2>
           <em><%= distance_of_time_in_words_to_now(Time.at(feed_item.created_time.to_i)) + " ago" %></em>
         </div>
         <div class="image_sizing">
