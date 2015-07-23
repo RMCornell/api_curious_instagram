@@ -54,5 +54,8 @@ group :development, :test do
 
   # Adding Jasmine for Testing
   gem 'jasmine'
+
+  # Adding RSpec for Testing
+  gem 'rspec-rails'
 end
 
