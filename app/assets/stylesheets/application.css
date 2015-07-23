@@ -31,9 +31,16 @@ body {
 }
 
 .image_sizing {
-    width: 50%;
+    width: 50em;
     height: auto;
+    align-content: center;
     margin: auto;
+}
+
+img {
+    width: 50em;
+    height: auto;
+
 }
 
 .body-image {
@@ -41,13 +48,13 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    width: 60%;
+    width: 50em;
     height: auto;
     opacity: 0.2;
 }
 
 .post {
-    width: 60%;
+    width: 100em;
     position: static;
     margin-left: auto;
     margin-right: auto;
