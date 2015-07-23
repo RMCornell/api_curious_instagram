@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
   def recent
     instagram_client.user_recent_media
+
   end
 
   def counts
